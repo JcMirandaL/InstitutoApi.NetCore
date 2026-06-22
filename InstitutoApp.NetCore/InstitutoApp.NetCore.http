@@ -1,0 +1,6 @@
+@InstitutoApp.NetCore_HostAddress = http://localhost:5079
+
+GET {{InstitutoApp.NetCore_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
