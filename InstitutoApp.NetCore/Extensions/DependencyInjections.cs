@@ -35,7 +35,7 @@ namespace InstitutoApp.Api.Extensions
 
             //inyecciones de dependencia de services
             //defino las inyeccion de dependencias
-            services.AddScoped<IGenericService<EstudianteResponseDTO, EstudianteCreatedDTO, EstudianteUpdateDTO>, EstdianteService>();
+            services.AddScoped<IEstdianteService<EstudianteResponseDTO, EstudianteCreatedDTO, EstudianteUpdateDTO>, EstdianteService>();
             services.AddScoped<IGenericService<CursoResponseDTO, CursoCreatedDTO, CursoUpdateDTO>, CursoService>();
 
 

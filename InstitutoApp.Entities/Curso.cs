@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InstitutoApp.Entities
 {
+    [Table("tbCursos")]
     public class Curso
     {
         [Key]

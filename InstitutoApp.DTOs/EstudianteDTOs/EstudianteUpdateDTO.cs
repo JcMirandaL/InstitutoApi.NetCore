@@ -1,17 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using static InstitutoApp.Common.Enums.Enums;
+
 
 namespace InstitutoApp.DTOs.EstudianteDTOs
 {
     public class EstudianteUpdateDTO
     {
         [Required(ErrorMessage = "La cedula es un campo obligatorio.")]
-        [StringLength(20, MinimumLength = 12, ErrorMessage = "La cedula debe tener entre 12 y 20 numeros.")]
+        [StringLength(20, MinimumLength = 8, ErrorMessage = "La cedula debe tener entre 8 y 20 numeros.")]
         public string Cedula { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "El tipo de cedula es un campo obligatorio.")]
+        [EnumDataType(typeof(TipoCedula), ErrorMessage = "El tipo de cedula solo puede ser 1, 2, 3, 4, 5")]
+        public TipoCedula TipoCedula { get; set; }
 
         [Required(ErrorMessage = "El nombre es un campo obligatorio.")]
         [StringLength(100, MinimumLength = 3, ErrorMessage = "El nombre debe de tener entre 3 y 100 caracteres.")]

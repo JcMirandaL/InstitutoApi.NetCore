@@ -20,7 +20,7 @@ namespace InstitutoApp.Repository
 
 
         public async Task<List<Curso>> GetAllAsync()
-        {
+        { 
             return await _context.Cursos
                 .AsNoTracking()
                 .Where(c => c.Estado == true)

@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InstitutoApp.Entities
 {
+    [Table("tbMatriculas")]
     public class Matricula
     {
         [Key]

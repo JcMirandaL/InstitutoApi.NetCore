@@ -22,8 +22,7 @@ namespace InstitutoApp.Services
             _mapper = mapper;
         }
 
-
-
+         
 
 
 
@@ -63,8 +62,8 @@ namespace InstitutoApp.Services
         
         public async Task<Response<CursoResponseDTO>> CreateAsync(CursoCreatedDTO entity)
         {
-            var cursoExists = await _cursoRepository.GetByNameAsync(entity.Nombre);
-            if (cursoExists != null)
+            var nameExists = await _cursoRepository.GetByNameAsync(entity.Nombre);
+            if (nameExists != null)
             {
                 throw new EntityExistDbException($"El curso con el nombre '{entity.Nombre}' ya existe en la base de datos.");
             }
@@ -88,6 +87,12 @@ namespace InstitutoApp.Services
             if (cursoExists == null)
             {
                 throw new NotFoundDbException($"No existe el curso con ID {entity.Id}.");
+            }
+
+            var nameExists = await _cursoRepository.GetByNameAsync(entity.Nombre);
+            if (cursoExists != null && cursoExists.Nombre != entity.Nombre)
+            {
+                throw new EntityExistDbException($"El curso con el nombre '{entity.Nombre}' ya existe en la base de datos.");
             }
 
             Curso updatedCurso = _mapper.Map<Curso>(entity);
