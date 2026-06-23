@@ -32,6 +32,7 @@ namespace InstitutoApp.Repository
         {
             return await _context.Cursos
                 .AsNoTracking()
+                .Include(c => c.Matriculas)
                 .Where(c => c.Id == id && c.Estado == true)
                 .SingleOrDefaultAsync();
         }

@@ -11,7 +11,7 @@ namespace InstitutoApp.Entities
         public int Id { get; set; }
 
         [Required(ErrorMessage = "La cedula es un campo obligatorio.")]
-        [StringLength(20, MinimumLength = 12, ErrorMessage = "La cedula debe tener entre 12 y 20 numeros.")]
+        [StringLength(20, MinimumLength = 8, ErrorMessage = "La cedula debe tener entre 8 y 20 numeros.")]
         public string EstudianteCedula { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "El Id del curso es un campo obligatorio.")]

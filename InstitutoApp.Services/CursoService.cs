@@ -90,7 +90,7 @@ namespace InstitutoApp.Services
             }
 
             var nameExists = await _cursoRepository.GetByNameAsync(entity.Nombre);
-            if (cursoExists != null && cursoExists.Nombre != entity.Nombre)
+            if (nameExists != null && nameExists.Nombre != entity.Nombre)
             {
                 throw new EntityExistDbException($"El curso con el nombre '{entity.Nombre}' ya existe en la base de datos.");
             }

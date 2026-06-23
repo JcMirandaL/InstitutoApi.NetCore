@@ -13,6 +13,13 @@ namespace InstitutoApp.DTOs.MatriculaDTOs
 
         public string EstudianteCedula { get; set; } = string.Empty;
 
+        public  string EstudianteNombre { get; set; } = string.Empty;
+
+
         public int CursoId { get; set; }
+
+        public string CursoNombre { get; set; } = string.Empty;
+
+        public DateTime FechaMatrucla { get; set; }
     }
 }

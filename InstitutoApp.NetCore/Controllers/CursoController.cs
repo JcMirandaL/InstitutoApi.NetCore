@@ -64,6 +64,11 @@ namespace InstitutoApp.Api.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
                 var response = await _cursoService.CreateAsync(cursoCreatedDTO);
                 return Ok(response);
             }
@@ -84,6 +89,11 @@ namespace InstitutoApp.Api.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
                 var response = await _cursoService.UpdateAsync(cursoUpdateDTO);
                 return Ok(response);
             }

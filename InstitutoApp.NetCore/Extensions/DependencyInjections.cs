@@ -2,6 +2,7 @@
 using InstitutoApp.Data;
 using InstitutoApp.DTOs.CursoDTOs;
 using InstitutoApp.DTOs.EstudianteDTOs;
+using InstitutoApp.DTOs.MatriculaDTOs;
 using InstitutoApp.Repository;
 using InstitutoApp.Services;
 using InstitutoApp.Services.Mapping;
@@ -37,12 +38,14 @@ namespace InstitutoApp.Api.Extensions
             //defino las inyeccion de dependencias
             services.AddScoped<IEstdianteService<EstudianteResponseDTO, EstudianteCreatedDTO, EstudianteUpdateDTO>, EstdianteService>();
             services.AddScoped<IGenericService<CursoResponseDTO, CursoCreatedDTO, CursoUpdateDTO>, CursoService>();
+            services.AddScoped<IGenericService<MatriculaResponseDTO, MatriculaCreatedDTO, MatriculaUpdateDTO>, MatriculaService>();
 
 
 
             //inyecciones de dependencia de repository
             services.AddScoped<EstdianteRepository>();
             services.AddScoped<CursoRepository>();
+            services.AddScoped<MatriculaRepository>();
 
 
             return services;
